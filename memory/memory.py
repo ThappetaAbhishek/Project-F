@@ -1,19 +1,22 @@
 import json
 import os
 
-MEMORY_FILE = "memory/chat_memory.json"
+CHAT_MEMORY_FILE = "memory/chat_memory.json"
+USER_MEMORY_FILE = "memory/user_memory.json"
 
+
+# ---------------- Chat History ----------------
 
 def load_memory():
-    if not os.path.exists(MEMORY_FILE):
+    if not os.path.exists(CHAT_MEMORY_FILE):
         return []
 
-    with open(MEMORY_FILE, "r") as file:
+    with open(CHAT_MEMORY_FILE, "r") as file:
         return json.load(file)
 
 
 def save_memory(memory):
-    with open(MEMORY_FILE, "w") as file:
+    with open(CHAT_MEMORY_FILE, "w") as file:
         json.dump(memory, file, indent=4)
 
 
@@ -26,12 +29,9 @@ def remember(user, bot):
     })
 
     save_memory(memory)
-    
-    save_memory(memory)
 
 
-USER_MEMORY_FILE = "memory/user_memory.json"
-
+# ---------------- User Memory ----------------
 
 def load_user_memory():
     if not os.path.exists(USER_MEMORY_FILE):
@@ -41,9 +41,9 @@ def load_user_memory():
         return json.load(file)
 
 
-def save_user_memory(data):
+def save_user_memory(memory):
     with open(USER_MEMORY_FILE, "w") as file:
-        json.dump(data, file, indent=4)
+        json.dump(memory, file, indent=4)
 
 
 def remember_fact(key, value):
@@ -56,26 +56,48 @@ def recall_fact(key):
     memory = load_user_memory()
     return memory.get(key)
 
+
+# ---------------- Natural Memory ----------------
+
 def remember_sentence(sentence):
     memory = load_user_memory()
 
-    sentence = sentence.lower()
+    text = sentence.lower().strip()
 
-    if "my age is" in sentence:
-        memory["age"] = sentence.replace("my age is", "").strip()
+    facts = {
+        "my name is": "name",
+        "call me": "name",
 
-    elif "i live in" in sentence:
-        memory["city"] = sentence.replace("i live in", "").strip()
+        "my age is": "age",
 
-    elif "my favorite language is" in sentence:
-        memory["favorite_language"] = sentence.replace(
-            "my favorite language is", ""
-        ).strip()
+        "i live in": "city",
 
-    elif "my college is" in sentence:
-        memory["college"] = sentence.replace("my college is", "").strip()
+        "my college is": "college",
+        "i study at": "college",
 
-    elif "my department is" in sentence:
-        memory["department"] = sentence.replace("my department is", "").strip()
+        "my department is": "department",
 
-    save_user_memory(memory)
+        "my favorite language is": "favorite_language",
+        "my favourite language is": "favorite_language",
+
+        "my favorite color is": "favorite_color",
+        "my favourite color is": "favorite_color",
+
+        "my hobby is": "hobby",
+        "my hobbies are": "hobby",
+
+        "i work as": "profession",
+        "my profession is": "profession"
+    }
+
+    for phrase, key in facts.items():
+
+        if text.startswith(phrase):
+
+            value = sentence[len(phrase):].strip()
+
+            if value:
+                memory[key] = value
+
+            save_user_memory(memory)
+            return

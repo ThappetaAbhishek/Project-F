@@ -1,7 +1,6 @@
-from urllib import response
-
 from backend.brain import get_response
 from memory.memory import remember
+
 
 def main():
     print("=" * 30)
@@ -17,12 +16,12 @@ def main():
             print("Project F: Goodbye!")
             break
 
-        
         response = get_response(user)
 
         remember(user, response)
 
-    print("Project F:", response)
+        print("Project F:", response)
+
 
 if __name__ == "__main__":
     main()

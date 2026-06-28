@@ -42,5 +42,133 @@
     {
         "user": "git add .",
         "bot": "Hello! I'm Project F.\n\nThe command `git add .` is a common Git command used to stage all changes in your current directory and its subdirectories.\n\nHere's what it does:\n\n*   **Stages new files:** If you've created any new files, `git add .` will add them to the staging area.\n*   **Stages modified files:** If you've made changes to existing files that Git is already tracking, those changes will be staged.\n*   **Stages deleted files:** While `git add .` itself doesn't explicitly mark deletions, if you delete a file and then run `git add .` followed by `git commit`, the deletion will be recorded. For explicitly staging deletions, `git add -u` (to stage modified and deleted files) or `git rm` (to remove and stage in one step) are often used.\n\nEssentially, `git add .` tells Git, \"Hey, I want to include all the current changes I've made in this directory (and below) in my next commit.\" It's a crucial step before you run `git commit`."
+    },
+    {
+        "user": "My age is 21",
+        "bot": "Got it! I'll remember that."
+    },
+    {
+        "user": "What is my age?",
+        "bot": "Your age is 21."
+    },
+    {
+        "user": "I live in Hyderabad",
+        "bot": "Got it! I'll remember that."
+    },
+    {
+        "user": "Where do I live?",
+        "bot": "You live in Hyderabad."
+    },
+    {
+        "user": "My age is 21",
+        "bot": "Got it! I'll remember that."
+    },
+    {
+        "user": "python main.py",
+        "bot": "Hello! I'm Project F.\n\nYou've entered `python main.py`. Are you trying to run a Python script, or is there something specific you'd like to do or know about this command?\n\nFor example, are you:\n*   Trying to execute a file named `main.py`?\n*   Encountering an error when running it?\n*   Looking for information on how to run Python scripts?\n*   Wanting to understand what this command does?\n\nLet me know how I can help!"
+    },
+    {
+        "user": "My age is 21",
+        "bot": "Got it! I'll remember that."
+    },
+    {
+        "user": "What is my age?",
+        "bot": "Your age is 21."
+    },
+    {
+        "user": "My name is Abhi",
+        "bot": "Nice to meet you, Abhi! I'll remember your name."
+    },
+    {
+        "user": "What is my name",
+        "bot": "Your name is Abhi."
+    },
+    {
+        "user": "I live in Hyderabad",
+        "bot": "Got it! I'll remember that."
+    },
+    {
+        "user": "Where do I live",
+        "bot": "You live in Hyderabad."
+    },
+    {
+        "user": "My favorite color is Black",
+        "bot": "Got it! I'll remember that."
+    },
+    {
+        "user": "What is my favorite color",
+        "bot": "Your favorite color is Black."
+    },
+    {
+        "user": "My hobby is Coding",
+        "bot": "Got it! I'll remember that."
+    },
+    {
+        "user": "What is my hobby",
+        "bot": "Your hobby is Coding."
+    },
+    {
+        "user": "what is my hobbby?",
+        "bot": "Hello! I'm Project F.\n\nThat's a fun question, but I don't have any personal information about you, so I wouldn't know what your hobbies are! Only you know what you enjoy doing in your free time.\n\nWhat sorts of activities do you love to do when you're not working or busy? Maybe things like reading, gaming, hiking, cooking, creating art, or playing sports? I'd be happy to chat about any of those if you'd like!"
+    },
+    {
+        "user": "python main.py",
+        "bot": "Hello! I'm Project F.\n\nIt looks like you just ran `python main.py`. Is there something specific you'd like help with regarding that script, or perhaps you have another question for me?"
+    },
+    {
+        "user": "Call me Abhi",
+        "bot": "Nice to meet you, Abhi! I'll remember your name."
+    },
+    {
+        "user": "What is my name",
+        "bot": "Your name is Abhi."
+    },
+    {
+        "user": "I study at CMR Enigneering College",
+        "bot": "Got it! I'll remember that."
+    },
+    {
+        "user": "What is my college",
+        "bot": "Your college is CMR Enigneering College."
+    },
+    {
+        "user": "I work as Software Engineer",
+        "bot": "Got it! I'll remember that."
+    },
+    {
+        "user": "What is my profession",
+        "bot": "Your profession is Software Engineer."
+    },
+    {
+        "user": "Hello",
+        "bot": "Hello Abhi!\n\nIt's nice to hear from you. How can I assist you today?"
+    },
+    {
+        "user": "",
+        "bot": "Hello Abhi!\n\nIt looks like your message might have been empty, or perhaps you're just saying hello again.\n\nHow can I help you today?"
+    },
+    {
+        "user": "What is Python?",
+        "bot": "Hello Abhi!\n\nPython is a very popular, high-level, general-purpose programming language. It's well-known for its simplicity and readability, which makes it a great choice for beginners and experienced developers alike.\n\nHere are a few key things about Python:\n\n*   **Easy to Learn:** Its syntax is designed to be clear and straightforward, almost like reading plain English.\n*   **Versatile:** You can use Python for a wide range of applications, including:\n    *   Web development (using frameworks like Django and Flask)\n    *   Data science and machine learning\n    *   Automation and scripting\n    *   Desktop applications\n    *   Scientific computing\n    *   Game development\n*   **Extensive Libraries:** It has a massive collection of pre-written code (libraries and frameworks) that can save developers a lot of time and effort.\n*   **Interpreted Language:** This means you don't need to compile it before running it, which speeds up the development process.\n\nMany software engineers, like yourself, use Python daily for various tasks! Is there something specific you'd like to know about Python, or perhaps how it's used in a particular area?"
+    },
+    {
+        "user": "",
+        "bot": "Hello Abhi!\n\nIt looks like your message might have been empty again. No worries at all!\n\nHow can I assist you today?"
+    },
+    {
+        "user": "I like Java.",
+        "bot": "That's great to hear, Abhi! Java is an excellent choice, especially for a Software Engineer like yourself.\n\nIt's a very powerful, object-oriented language known for its \"write once, run anywhere\" capability and its robust nature, which makes it popular for enterprise-level applications, Android development, and a lot more.\n\nI'll make a note that you like Java! Is there anything specific you'd like to discuss about Java, or perhaps how it compares to Python?"
+    },
+    {
+        "user": "",
+        "bot": "Hello Abhi!\n\nIt seems your message might be empty once more. No problem at all!\n\nHow can I help you today?"
+    },
+    {
+        "user": "Explain inheritance.",
+        "bot": "Error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 48.579818928s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '5'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '48s'}]}}"
+    },
+    {
+        "user": "Hello",
+        "bot": "Hello Abhi!\n\nIt's good to hear from you again. How can I assist you today?"
     }
 ]

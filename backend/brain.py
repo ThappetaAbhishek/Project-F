@@ -2,7 +2,12 @@ import os
 from dotenv import load_dotenv
 from google import genai
 
-from memory.memory import remember_fact, recall_fact
+from memory.memory import (
+    remember_sentence,
+    recall_fact
+)
+
+from backend.prompt_builder import build_prompt
 
 load_dotenv()
 
@@ -10,37 +15,84 @@ client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 
 def get_response(message):
-    message_lower = message.lower()
+    message_lower = message.lower().strip()
 
-    # ---------- Remember user's name ----------
-    if "my name is" in message_lower:
-        name = message[message_lower.find("my name is") + len("my name is"):].strip().title()
-        remember_fact("name", name)
-        return f"Nice to meet you, {name}! I'll remember your name."
+    # ---------------- Remember Information ----------------
 
-    # ---------- Recall user's name ----------
-    if "what is my name" in message_lower:
-        name = recall_fact("name")
-        if name:
-            return f"Your name is {name}."
-        else:
-            return "I don't know your name yet."
+    memory_phrases = [
+        "my name is",
+        "call me",
+        "my age is",
+        "i live in",
+        "my college is",
+        "i study at",
+        "my department is",
+        "my favorite language is",
+        "my favourite language is",
+        "my favorite color is",
+        "my favourite color is",
+        "my hobby is",
+        "my hobbies are",
+        "i work as",
+        "my profession is"
+    ]
 
-    # ---------- AI Prompt ----------
-    prompt = f"""
-You are Project F, a friendly AI assistant.
+    if any(phrase in message_lower for phrase in memory_phrases):
 
-Rules:
-- Your name is Project F.
-- Never say you are Gemini or Google.
-- Never say you are a large language model.
-- Always introduce yourself as Project F.
-- Answer naturally and helpfully.
+        remember_sentence(message)
 
-User: {message}
-"""
+        if "my name is" in message_lower or "call me" in message_lower:
+            name = recall_fact("name")
+            return f"Nice to meet you, {name}! I'll remember your name."
+
+        return "Got it! I'll remember that."
+
+    # ---------------- Recall Information ----------------
+
+    recall_questions = {
+        "what is my name": ("name", "Your name is"),
+        "who am i": ("name", "Your name is"),
+
+        "what is my age": ("age", "Your age is"),
+        "how old am i": ("age", "Your age is"),
+
+        "where do i live": ("city", "You live in"),
+        "what is my city": ("city", "You live in"),
+
+        "what is my college": ("college", "Your college is"),
+        "where do i study": ("college", "Your college is"),
+
+        "what is my department": ("department", "Your department is"),
+
+        "what is my favorite language": ("favorite_language", "Your favorite language is"),
+        "what is my favourite language": ("favorite_language", "Your favorite language is"),
+
+        "what is my favorite color": ("favorite_color", "Your favorite color is"),
+        "what is my favourite color": ("favorite_color", "Your favorite color is"),
+
+        "what is my hobby": ("hobby", "Your hobby is"),
+
+        "what is my profession": ("profession", "Your profession is"),
+        "what do i do": ("profession", "Your profession is")
+    }
+
+    for question, (key, label) in recall_questions.items():
+
+        if question in message_lower:
+
+            value = recall_fact(key)
+
+            if value:
+                return f"{label} {value}."
+
+            return "I don't know that yet."
+
+    # ---------------- Gemini ----------------
+
+    prompt = build_prompt(message)
 
     try:
+
         response = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=prompt

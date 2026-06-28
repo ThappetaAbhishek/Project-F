@@ -1,3 +1,9 @@
 {
-    "name": "Abhi"
+    "name": "Abhi",
+    "age": "21",
+    "city": "Hyderabad",
+    "favorite_color": "Black",
+    "hobby": "Coding",
+    "college": "CMR Enigneering College",
+    "profession": "Software Engineer"
 }
