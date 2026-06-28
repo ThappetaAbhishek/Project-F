@@ -3,11 +3,12 @@ from dotenv import load_dotenv
 from google import genai
 
 from memory.memory import (
-    remember_sentence,
-    recall_fact
+    recall_fact,
+    remember_sentence
 )
 
 from backend.prompt_builder import build_prompt
+from backend.conversation import get_recent_conversation
 
 load_dotenv()
 
@@ -43,7 +44,8 @@ def get_response(message):
 
         if "my name is" in message_lower or "call me" in message_lower:
             name = recall_fact("name")
-            return f"Nice to meet you, {name}! I'll remember your name."
+            if name:
+                return f"Nice to meet you, {name}! I'll remember your name."
 
         return "Got it! I'll remember that."
 
@@ -77,9 +79,7 @@ def get_response(message):
     }
 
     for question, (key, label) in recall_questions.items():
-
         if question in message_lower:
-
             value = recall_fact(key)
 
             if value:
@@ -87,12 +87,20 @@ def get_response(message):
 
             return "I don't know that yet."
 
+    # ---------------- Conversation History ----------------
+
+    conversation = get_recent_conversation()
+
+    # ---------------- Prompt ----------------
+
+    prompt = build_prompt(
+        user_message=message,
+        conversation_history=conversation
+    )
+
     # ---------------- Gemini ----------------
 
-    prompt = build_prompt(message)
-
     try:
-
         response = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=prompt
