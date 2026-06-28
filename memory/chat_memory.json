@@ -190,5 +190,37 @@
     {
         "user": "Can you give another one?",
         "bot": "Of course, Abhi! Let's try another one, sticking to that beginner-friendly approach without getting into code.\n\nImagine you have a general category called \"**Animal**.\"\n\nWhat are some things almost all `Animal`s can do or have?\n*   They can `eat()`.\n*   They can `sleep()`.\n*   They make a `sound()`.\n*   They probably have a `name`.\n\nSo, our `Animal` is like the **Parent Class**. It's the blueprint for the basic, shared stuff.\n\nNow, let's think about a \"**Dog**.\" A `Dog` *is an* `Animal`, right?\nInstead of saying: \"A Dog eats, sleeps, makes a sound, has a name...\" we can just say: \"A `Dog` inherits from `Animal`.\"\n\nThis means the `Dog` automatically gets the ability to `eat()`, `sleep()`, make a `sound()`, and have a `name`. We don't have to write those features again for the `Dog`.\n\nBut what makes a `Dog` special?\n*   It can `bark()`.\n*   It can `fetch()`.\n\nSo, `Dog` is a **Child Class** that inherits all the basic `Animal` traits and then *adds* its own unique `bark()` and `fetch()` abilities. It also has its *own specific* `sound()` (a bark!), which is different from, say, a cat's sound.\n\nSimilarly, we could have a \"**Cat**\" class. A `Cat` *is also an* `Animal`.\n*   It inherits `eat()`, `sleep()`, `sound()`, `name` from `Animal`.\n*   It adds its own unique things, like `meow()` (its specific sound!) and `purr()`.\n\nSo, inheritance helps us build a family tree for our ideas. The \"parents\" (superclasses) give the common traits, and the \"children\" (subclasses) get those traits and then add their own unique twists. It's like saying, \"All dogs are animals, but not all animals are dogs.\"\n\nDoes thinking about animals and their specific behaviors help clarify it even more?"
+    },
+    {
+        "user": "What do I like?",
+        "bot": "I don't know your preferences yet."
+    },
+    {
+        "user": "What are my goals?",
+        "bot": "I don't know your goals yet."
+    },
+    {
+        "user": "I like Java",
+        "bot": "I'll remember that you like Java."
+    },
+    {
+        "user": "I prefer Dark Theme",
+        "bot": "I'll remember that you prefer Dark Theme."
+    },
+    {
+        "user": "I'm learning Spring Boot",
+        "bot": "Awesome! I'll remember that you're learning spring boot."
+    },
+    {
+        "user": "I'm building Project F",
+        "bot": "Nice! I'll remember that you're building project f."
+    },
+    {
+        "user": "What do I like?",
+        "bot": "likes: Java\npreference: Dark Theme"
+    },
+    {
+        "user": "What are my goals?",
+        "bot": "Your goals are:\n\u2022 Learning Spring Boot\n\u2022 Building Project F"
     }
 ]

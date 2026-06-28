@@ -5,5 +5,13 @@
     "favorite_color": "Black",
     "hobby": "Coding",
     "college": "CMR Enigneering College",
-    "profession": "Software Engineer"
+    "profession": "Software Engineer",
+    "preferences": {
+        "likes": "Java",
+        "preference": "Dark Theme"
+    },
+    "goals": [
+        "Learning Spring Boot",
+        "Building Project F"
+    ]
 }
