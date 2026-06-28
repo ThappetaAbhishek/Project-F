@@ -1,17 +1,11 @@
 from memory.memory import (
     load_user_memory,
-    save_user_memory
+    save_user_memory,
+    remember_sentence
 )
 
 
 def remember_preference(key, value):
-    """
-    Stores user preferences like:
-    favorite language,
-    favorite color,
-    hobby,
-    etc.
-    """
 
     memory = load_user_memory()
 
@@ -24,13 +18,6 @@ def remember_preference(key, value):
 
 
 def remember_goal(goal):
-    """
-    Stores long-term user goals.
-    Example:
-    - Learning Java
-    - Preparing for interviews
-    - Building Project F
-    """
 
     memory = load_user_memory()
 
@@ -44,10 +31,77 @@ def remember_goal(goal):
 
 
 def get_preferences():
+
     memory = load_user_memory()
+
     return memory.get("preferences", {})
 
 
 def get_goals():
+
     memory = load_user_memory()
+
     return memory.get("goals", [])
+
+
+# --------------------------------------------------
+# NEW FUNCTION
+# --------------------------------------------------
+
+def process_memory(sentence, category, importance):
+    """
+    Stores information according to its category.
+    """
+
+    text = sentence.lower().strip()
+
+    # Profile information
+    if category == "profile":
+        remember_sentence(sentence)
+        return
+
+    # Preferences
+    if category == "preferences":
+
+        if text.startswith("i like"):
+            remember_preference(
+                "likes",
+                sentence[6:].strip()
+            )
+
+        elif text.startswith("i love"):
+            remember_preference(
+                "likes",
+                sentence[6:].strip()
+            )
+
+        elif text.startswith("i prefer"):
+            remember_preference(
+                "preference",
+                sentence[8:].strip()
+            )
+
+        elif text.startswith("my favorite"):
+            remember_preference(
+                "favorite",
+                sentence.replace("My favorite", "").strip()
+            )
+
+        return
+
+    # Goals
+    if category == "goals":
+
+        if text.startswith("i'm"):
+            remember_goal(sentence[4:].strip())
+
+        elif text.startswith("i am"):
+            remember_goal(sentence[5:].strip())
+
+        elif text.startswith("my goal is"):
+            remember_goal(sentence[10:].strip())
+
+        elif text.startswith("i want to become"):
+            remember_goal(sentence[16:].strip())
+
+        return

@@ -222,5 +222,53 @@
     {
         "user": "What are my goals?",
         "bot": "Your goals are:\n\u2022 Learning Spring Boot\n\u2022 Building Project F"
+    },
+    {
+        "user": "Hello",
+        "bot": "Hello there! How can I help you today?"
+    },
+    {
+        "user": "",
+        "bot": "Hello there! How can I help you today?"
+    },
+    {
+        "user": "My name is Abhi",
+        "bot": "Nice to meet you, Abhi!\n(Category: profile, Importance: 5)"
+    },
+    {
+        "user": "",
+        "bot": "Hello there, Abhi! How can I help you today?"
+    },
+    {
+        "user": "I like Java",
+        "bot": "I'll remember that.\n(Category: preferences, Importance: 3)"
+    },
+    {
+        "user": "",
+        "bot": "Hello there, Abhi! How can I help you today?"
+    },
+    {
+        "user": "I'm building Project F",
+        "bot": "Got it!\n(Category: profile, Importance: 5)"
+    },
+    {
+        "user": "I'm building Project F",
+        "bot": "Got it!\n(Category: profile, Importance: 5)"
+    },
+    {
+        "user": "I'm building Project F",
+        "bot": "I'll remember that.\n(Category: goals, Importance: 4)"
+    },
+    {
+        "user": "My name is Abhi",
+        "bot": "Nice to meet you, Abhi!\nI'll remember your name."
+    },
+    {
+        "user": "I like Java",
+        "bot": "I'll remember that.\n(Category: preferences, Importance: 3)"
+    },
+    {
+        "user": "I'm building Project F",
+        "bot": "I'll remember that.\n(Category: goals, Importance: 4)"
     }
 ]
