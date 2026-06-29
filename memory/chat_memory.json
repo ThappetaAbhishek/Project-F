@@ -270,5 +270,37 @@
     {
         "user": "I'm building Project F",
         "bot": "I'll remember that.\n(Category: goals, Importance: 4)"
+    },
+    {
+        "user": "I like Java",
+        "bot": "I'll remember that you like Java."
+    },
+    {
+        "user": "I love Python",
+        "bot": "I'll remember that you love Python."
+    },
+    {
+        "user": "I prefer Dark Theme",
+        "bot": "I'll remember that you prefer Dark Theme."
+    },
+    {
+        "user": "What do I like?",
+        "bot": "Based on what you've told me, you like Java, you love Python, and you prefer Dark Theme!"
+    },
+    {
+        "user": "I'm learning Spring Boot",
+        "bot": "I'll remember your goal: Spring Boot."
+    },
+    {
+        "user": "I'm building Project F",
+        "bot": "I'll remember your goal: Project F."
+    },
+    {
+        "user": "I want to become AI Engineer",
+        "bot": "I'll remember your goal: AI Engineer."
+    },
+    {
+        "user": "What are my goals?",
+        "bot": "Based on what you've told me, your goals are to learn Spring Boot, build Project F, and become an AI Engineer!"
     }
 ]

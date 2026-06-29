@@ -5,12 +5,19 @@ from google import genai
 from backend.prompt_builder import build_prompt
 from backend.conversation import get_recent_conversation
 
-from backend.importance import analyze_importance
-from backend.memory_manager import process_memory
-
 from backend.handlers.profile_handler import (
     can_handle as profile_can_handle,
     handle as profile_handle
+)
+
+from backend.handlers.preference_handler import (
+    can_handle as preference_can_handle,
+    handle as preference_handle
+)
+
+from backend.handlers.goal_handler import (
+    can_handle as goal_can_handle,
+    handle as goal_handle
 )
 
 load_dotenv()
@@ -22,28 +29,20 @@ client = genai.Client(
 
 def get_response(message):
 
-    # ---------------- Profile Handler ----------------
+    # ---------------- Profile ----------------
 
     if profile_can_handle(message):
         return profile_handle(message)
 
-    # ---------------- Intelligent Memory ----------------
+    # ---------------- Preferences ----------------
 
-    analysis = analyze_importance(message)
+    if preference_can_handle(message):
+        return preference_handle(message)
 
-    if analysis["remember"]:
+    # ---------------- Goals ----------------
 
-        process_memory(
-            message,
-            analysis["category"],
-            analysis["importance"]
-        )
-
-        return (
-            "I'll remember that.\n"
-            f"(Category: {analysis['category']}, "
-            f"Importance: {analysis['importance']})"
-        )
+    if goal_can_handle(message):
+        return goal_handle(message)
 
     # ---------------- Conversation ----------------
 

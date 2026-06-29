@@ -7,13 +7,15 @@
     "college": "CMR Enigneering College",
     "profession": "Software Engineer",
     "preferences": {
-        "likes": "Java",
+        "likes": "Python",
         "preference": "Dark Theme"
     },
     "goals": [
         "Learning Spring Boot",
         "Building Project F",
         "Project F",
-        "building Project F"
+        "building Project F",
+        "Spring Boot",
+        "AI Engineer"
     ]
 }
