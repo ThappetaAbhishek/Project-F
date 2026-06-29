@@ -1,59 +1,63 @@
-from backend.memory_manager import remember_preference
+from backend.memory_manager import (
+    remember_preference,
+    get_preferences
+)
 
-
-PREFERENCE_PHRASES = [
-    "i like",
-    "i love",
-    "i prefer",
-    "my favorite",
-    "my favourite"
-]
+from backend.semantic import PREFERENCE_PATTERNS
 
 
 def can_handle(message):
 
     text = message.lower().strip()
 
-    return any(
-        text.startswith(phrase)
-        for phrase in PREFERENCE_PHRASES
-    )
+    for patterns in PREFERENCE_PATTERNS.values():
+
+        for phrase in patterns:
+
+            if text.startswith(phrase):
+                return True
+
+    return False
 
 
 def handle(message):
 
     text = message.lower().strip()
 
-    if text.startswith("i like"):
+    # ---------- Likes ----------
 
-        value = message[6:].strip()
+    for phrase in PREFERENCE_PATTERNS["likes"]:
 
-        remember_preference("likes", value)
+        if text.startswith(phrase):
 
-        return f"I'll remember that you like {value}."
+            value = message[len(phrase):].strip()
 
-    if text.startswith("i love"):
+            remember_preference("likes", value)
 
-        value = message[6:].strip()
+            return f"I'll remember that you like {value}."
 
-        remember_preference("likes", value)
+    # ---------- Favorite Color ----------
 
-        return f"I'll remember that you love {value}."
+    for phrase in PREFERENCE_PATTERNS["favorite_color"]:
 
-    if text.startswith("i prefer"):
+        if text.startswith(phrase):
 
-        value = message[8:].strip()
+            value = message[len(phrase):].strip()
 
-        remember_preference("preference", value)
+            remember_preference("favorite_color", value)
 
-        return f"I'll remember that you prefer {value}."
+            return f"I'll remember your favorite color is {value}."
 
-    if text.startswith("my favorite") or text.startswith("my favourite"):
+    # ---------- Hobby ----------
 
-        value = message.split("is")[-1].strip()
+    for phrase in PREFERENCE_PATTERNS["hobby"]:
 
-        remember_preference("favorite", value)
+        if text.startswith(phrase):
 
-        return f"I'll remember your favorite is {value}."
+            value = message[len(phrase):].strip()
+
+            remember_preference("hobby", value)
+
+            return f"I'll remember your hobby is {value}."
 
     return None
