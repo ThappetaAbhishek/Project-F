@@ -1,10 +1,3 @@
-import os
-from dotenv import load_dotenv
-from google import genai
-
-from backend.prompt_builder import build_prompt
-from backend.conversation import get_recent_conversation
-
 from backend.handlers.profile_handler import (
     can_handle as profile_can_handle,
     handle as profile_handle
@@ -20,52 +13,38 @@ from backend.handlers.goal_handler import (
     handle as goal_handle
 )
 
-load_dotenv()
+from backend.handlers.recall_handler import (
+    can_handle as recall_can_handle,
+    handle as recall_handle
+)
 
-client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY")
+from backend.handlers.gemini_handler import (
+    handle as gemini_handle
 )
 
 
 def get_response(message):
 
-    # ---------------- Profile ----------------
+    # -------- Profile --------
 
     if profile_can_handle(message):
         return profile_handle(message)
 
-    # ---------------- Preferences ----------------
+    # -------- Preferences --------
 
     if preference_can_handle(message):
         return preference_handle(message)
 
-    # ---------------- Goals ----------------
+    # -------- Goals --------
 
     if goal_can_handle(message):
         return goal_handle(message)
 
-    # ---------------- Conversation ----------------
+    # -------- Recall --------
 
-    conversation = get_recent_conversation()
+    if recall_can_handle(message):
+        return recall_handle(message)
 
-    # ---------------- Prompt ----------------
+    # -------- Gemini --------
 
-    prompt = build_prompt(
-        user_message=message,
-        conversation_history=conversation
-    )
-
-    # ---------------- Gemini ----------------
-
-    try:
-
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt
-        )
-
-        return response.text.strip()
-
-    except Exception as e:
-
-        return f"Error: {e}"
+    return gemini_handle(message)

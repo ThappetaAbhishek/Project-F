@@ -302,5 +302,37 @@
     {
         "user": "What are my goals?",
         "bot": "Based on what you've told me, your goals are to learn Spring Boot, build Project F, and become an AI Engineer!"
+    },
+    {
+        "user": "My name is Abhi",
+        "bot": "Nice to meet you, Abhi!\nI'll remember your name."
+    },
+    {
+        "user": "I like Java",
+        "bot": "I'll remember that you like Java."
+    },
+    {
+        "user": "I prefer Dark Theme",
+        "bot": "I'll remember that you prefer Dark Theme."
+    },
+    {
+        "user": "I'm learning Spring Boot",
+        "bot": "I'll remember your goal: Spring Boot."
+    },
+    {
+        "user": "What is my name?",
+        "bot": "Your name is Abhi!"
+    },
+    {
+        "user": "Hello",
+        "bot": "Hello Abhi! How can I help you today?"
+    },
+    {
+        "user": "Explain Java Inheritance",
+        "bot": "Okay Abhi, I can definitely help you understand Java Inheritance!\n\nIn Java, inheritance is a core concept of Object-Oriented Programming (OOP) that allows a class to inherit properties and behaviors (fields and methods) from another class. Think of it like a parent-child relationship:\n\n*   **Parent Class (or Superclass / Base Class):** This is the class whose features are inherited.\n*   **Child Class (or Subclass / Derived Class):** This is the class that inherits the features from the parent class.\n\nThe child class can then reuse the code from the parent class, and it can also add its own unique properties and methods, or even override some of the parent's methods to provide a specific implementation.\n\n**Why is it useful?**\n\n1.  **Code Reusability:** You don't have to write the same code again and again. If multiple classes share common features, you can put those features in a parent class, and the child classes can just inherit them.\n2.  **Method Overriding (Runtime Polymorphism):** Child classes can provide specific implementations for methods that are already defined in their parent class.\n3.  **Hierarchical Classification:** It helps organize classes in a logical, tree-like structure, making your code easier to manage and understand.\n\nYou use the `extends` keyword to make one class inherit from another.\n\nFor example:\n\n```java\nclass Vehicle { // Parent Class\n    String brand = \"General Motors\";\n    public void honk() {\n        System.out.println(\"Tuut, tuut!\");\n    }\n}\n\nclass Car extends Vehicle { // Child Class\n    String modelName = \"Mustang\";\n}\n```\n\nIn this example, `Car` inherits `brand` and the `honk()` method from `Vehicle`. You could create a `Car` object and call `carObject.honk()`, and it would work just like if it were a `Vehicle` object, plus it has its own `modelName`.\n\nDoes that make sense, Abhi? Let me know if you'd like an example or want to dive deeper into any specific part!"
+    },
+    {
+        "user": "What do I like?",
+        "bot": "You like Java, Abhi, and you prefer Dark Theme! Is there anything else you'd like to know about your preferences, or something else I can help with?"
     }
 ]
