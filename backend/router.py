@@ -8,6 +8,21 @@ from backend.handlers.calculator_handler import (
     handle as calculator_handle
 )
 
+from backend.handlers.weather_handler import (
+    can_handle as weather_can_handle,
+    handle as weather_handle
+)
+
+from backend.handlers.news_handler import (
+    can_handle as news_can_handle,
+    handle as news_handle
+)
+
+from backend.handlers.search_handler import (
+    can_handle as search_can_handle,
+    handle as search_handle
+)
+
 from backend.handlers.profile_handler import (
     can_handle as profile_can_handle,
     handle as profile_handle
@@ -34,21 +49,34 @@ from backend.handlers.gemini_handler import (
 
 
 HANDLERS = [
+
     (developer_can_handle, developer_handle),
+
     (calculator_can_handle, calculator_handle),
+
+    (weather_can_handle, weather_handle),
+
+    (news_can_handle, news_handle),
+
+    (search_can_handle, search_handle),
+
     (profile_can_handle, profile_handle),
+
     (preference_can_handle, preference_handle),
+
     (goal_can_handle, goal_handle),
+
     (recall_can_handle, recall_handle),
 ]
 
 
 def route(message):
     """
-    Routes a user message to the appropriate handler.
+    Routes the user message to the appropriate handler.
     """
 
     for can_handle, handle in HANDLERS:
+
         if can_handle(message):
             return handle(message)
 

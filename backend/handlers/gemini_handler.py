@@ -1,19 +1,24 @@
-import os
-
-from dotenv import load_dotenv
 from google import genai
+
+from backend.config import (
+    GEMINI_API_KEY,
+    GEMINI_MODEL
+)
 
 from backend.prompt_builder import build_prompt
 from backend.conversation import get_recent_conversation
+from backend.logger import logger
 
-load_dotenv()
 
 client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY")
+    api_key=GEMINI_API_KEY
 )
 
 
 def handle(message):
+    """
+    Handles all requests that reach Gemini.
+    """
 
     conversation = get_recent_conversation()
 
@@ -23,14 +28,20 @@ def handle(message):
     )
 
     try:
+        logger.info(f"Gemini Request: {message}")
 
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model=GEMINI_MODEL,
             contents=prompt
         )
 
-        return response.text.strip()
+        answer = response.text.strip()
+
+        logger.info("Gemini Response Generated Successfully")
+
+        return answer
 
     except Exception as e:
+        logger.error(f"Gemini Error: {e}")
 
-        return f"Error: {e}"
+        return f"Gemini Error: {e}"

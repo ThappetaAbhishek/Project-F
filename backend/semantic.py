@@ -1,11 +1,10 @@
 """
 Semantic patterns used by Project F.
-
-This file maps different ways of saying the same thing
-to one common meaning.
 """
 
-# ---------------- Preferences ----------------
+# =====================================================
+# Preferences
+# =====================================================
 
 PREFERENCE_PATTERNS = {
 
@@ -50,7 +49,9 @@ PREFERENCE_PATTERNS = {
 }
 
 
-# ---------------- Goals ----------------
+# =====================================================
+# Goals
+# =====================================================
 
 GOAL_PATTERNS = [
 
@@ -69,7 +70,9 @@ GOAL_PATTERNS = [
 ]
 
 
-# ---------------- Profile ----------------
+# =====================================================
+# Profile
+# =====================================================
 
 PROFILE_PATTERNS = {
 
@@ -101,3 +104,56 @@ PROFILE_PATTERNS = {
         "my department is"
     ]
 }
+
+
+# =====================================================
+# Search
+# =====================================================
+
+SEARCH_PATTERNS = [
+
+    "/search",
+
+    "search",
+    "search for",
+    "search the web",
+    "search internet",
+
+    "find",
+    "find information",
+    "find information about",
+
+    "look up",
+    "look up information",
+
+    "tell me about",
+
+    "who is",
+    "what is",
+    "where is",
+    "when was"
+]
+
+
+# =====================================================
+# News
+# =====================================================
+
+NEWS_PATTERNS = [
+
+    "news",
+
+    "latest",
+
+    "headlines",
+
+    "breaking news",
+
+    "news about",
+
+    "latest news",
+
+    "latest news about",
+
+    "latest news on"
+]
