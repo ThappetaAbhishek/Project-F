@@ -618,5 +618,29 @@
     {
         "user": "25+75",
         "bot": "100"
+    },
+    {
+        "user": "Who is Sundar Pichai and latest news about him?",
+        "bot": "Sundar Pichai is the CEO of Google.\n\nRecent news about him includes:\n\n*   He recently shared his \"secret to success\" and three guiding principles during a speech at Stanford, where he emphasized that only a few moments in life truly matter.\n*   He met a Google employee on their last day, which left the employee thrilled.\n*   Google plans to spend $190 billion on AI infrastructure, with Pichai stating that demand for AI is outpacing supply.\n*   He is known as one of the world's highest-paid CEOs, with reports indicating a pay package from Google worth up to USD 692 million."
+    },
+    {
+        "user": "Who is Alan Turing?",
+        "bot": "Alan Turing was an English mathematician, computer scientist, and logician. He was very influential in the development of theoretical computer science. He created the Turing machine, which is a model of a general-purpose computer and helped define algorithms and computation. Turing is widely considered to be the father of theoretical computer science.\n\n\ud83d\udd17 https://en.wikipedia.org/wiki/Alan_Turing"
+    },
+    {
+        "user": "Weather Hyderabad",
+        "bot": "The weather in Hyderabad, India is 24.6 \u00b0C. Humidity is 84%, and wind speed is 18.0 km/h."
+    },
+    {
+        "user": "Latest AI news",
+        "bot": "Here's the latest AI news:\n\nMeta is planning to launch a new cloud business to sell its extra AI computing power, which has led to a jump in its stock price. Meanwhile, some companies that laid off workers citing AI are reportedly starting to regret those decisions. In other news, there's a growing sentiment that the current \"AI rally\" in the market might be losing momentum."
+    },
+    {
+        "user": "25+89",
+        "bot": "114"
+    },
+    {
+        "user": "Explain quantum computing simply.",
+        "bot": "Quantum computing uses the strange rules of tiny particles to create powerful computers.\n\nHere's how it works simply:\n1.  **Classical computers** (like your phone or laptop) use \"bits\" that can be either a 0 or a 1.\n2.  **Quantum computers** use \"qubits,\" which are special. Qubits can be both a 0 and a 1 *at the same time* (this is called **superposition**).\n3.  Qubits can also be \"entangled,\" meaning they are linked, and the state of one instantly affects the others, even if they are far apart.\n\nThese unique properties allow quantum computers to process vast amounts of information and explore many possibilities simultaneously, solving certain complex problems much faster than any traditional computer.\n\nThey're not for everyday tasks like email or social media. Instead, they're designed for highly specialized problems, like discovering new medicines and materials, creating advanced AI, or breaking complex codes."
     }
 ]
