@@ -1,18 +1,17 @@
 """
-Project F Decision Engine
+Project F Multi Decision Engine
 
-Uses centralized intent definitions to determine
-which tool should handle the user's request.
+Returns all matching intents instead of just one.
 """
 
 from backend.intents import INTENTS
 
 
-def decide(message):
+def decide_all(message):
 
     text = message.lower().strip()
 
-    scores = {}
+    matches = []
 
     for intent, keywords in INTENTS.items():
 
@@ -32,11 +31,9 @@ def decide(message):
                 if keyword in text:
                     score += 2
 
-        scores[intent] = score
+        if score > 0:
+            matches.append((intent, score))
 
-    best_intent = max(scores, key=scores.get)
+    matches.sort(key=lambda x: x[1], reverse=True)
 
-    if scores[best_intent] == 0:
-        return "gemini"
-
-    return best_intent
+    return [intent for intent, score in matches]
