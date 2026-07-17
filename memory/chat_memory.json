@@ -642,5 +642,105 @@
     {
         "user": "Explain quantum computing simply.",
         "bot": "Quantum computing uses the strange rules of tiny particles to create powerful computers.\n\nHere's how it works simply:\n1.  **Classical computers** (like your phone or laptop) use \"bits\" that can be either a 0 or a 1.\n2.  **Quantum computers** use \"qubits,\" which are special. Qubits can be both a 0 and a 1 *at the same time* (this is called **superposition**).\n3.  Qubits can also be \"entangled,\" meaning they are linked, and the state of one instantly affects the others, even if they are far apart.\n\nThese unique properties allow quantum computers to process vast amounts of information and explore many possibilities simultaneously, solving certain complex problems much faster than any traditional computer.\n\nThey're not for everyday tasks like email or social media. Instead, they're designed for highly specialized problems, like discovering new medicines and materials, creating advanced AI, or breaking complex codes."
+    },
+    {
+        "user": "I am building Smart Office System using React Flask Python",
+        "bot": "I'll remember your goal: Smart Office System using React Flask Python."
+    },
+    {
+        "user": "I want to become an AI Architect",
+        "bot": "That's a fantastic goal, becoming an AI Architect!\n\nAn AI Architect is essentially the person who designs and oversees the implementation of AI systems and solutions within an organization. They're like the master planner, making sure the AI strategy aligns with business goals, choosing the right technologies, and ensuring the systems are robust, scalable, and ethical.\n\nTo pursue this path, you'd typically focus on:\n\n1.  **Strong Foundations:** Deep understanding of AI/ML concepts, algorithms, and models.\n2.  **Programming Expertise:** Proficiency in languages like Python (which you're already using for your Smart Office System!), R, or Java.\n3.  **Data Engineering:** Understanding how to collect, process, and manage large datasets.\n4.  **Cloud Platforms:** Experience with major cloud providers like AWS, Azure, or Google Cloud, as many AI solutions are cloud-based.\n5.  **Software Architecture:** Knowledge of system design, integration, and deployment patterns.\n6.  **Domain Knowledge:** Understanding the specific industry or problem space where the AI will be applied.\n\nGiven you're already working with Python and Flask for your Smart Office System, you've got a great starting point with some of the core technologies involved!"
+    },
+    {
+        "user": "I'm working on Project F using Docker",
+        "bot": "That's great! So you're working on *your* Project F, the Smart Office System, and you're using Docker with it.\n\nThat's a really smart move! Docker will be super helpful for your React Flask Python system. It allows you to:\n\n*   **Package everything neatly:** All your code, libraries, and dependencies for each part (React, Flask, Python) can be bundled into separate containers.\n*   **Ensure consistency:** What works on your machine will work exactly the same way when deployed, avoiding those \"it worked on my machine\" headaches.\n*   **Simplify deployment:** It makes it much easier to get your Smart Office System up and running, whether it's on a development server or a cloud platform.\n\nPlus, knowing Docker is a fantastic skill to add to your toolkit, especially as you aim to become an AI Architect. Many AI solutions are deployed using containers for scalability and ease of management.\n\nHow are you finding it so far?"
+    },
+    {
+        "user": "I am building Smart Office System using React Flask Python",
+        "bot": "I'll remember your goal: Smart Office System using React Flask Python."
+    },
+    {
+        "user": "I want to become an AI Architect",
+        "bot": "That's still a fantastic goal, and one we've chatted about! I remember you're aiming to become an AI Architect.\n\nIt's a really rewarding path, especially with your existing work on the Smart Office System using React, Flask, and Python, and now incorporating Docker. Those are all excellent building blocks for an AI Architect's toolkit.\n\nIs there anything specific about becoming an AI Architect you'd like to dive deeper into today? Perhaps a particular skill, technology, or a step in the journey?"
+    },
+    {
+        "user": "I'm working on Project F using Docker",
+        "bot": "That's great! I remember you mentioned that before. You're working on your Smart Office System (which you've been calling Project F) and using Docker with it.\n\nIt's a really solid approach, especially as you're building towards becoming an AI Architect. Docker skills are definitely a plus in that field.\n\nHow's the integration going, or is there anything specific you're exploring with Docker for your system right now?"
+    },
+    {
+        "user": "My name is Abhi",
+        "bot": "Nice to meet you, Abhi!\nI'll remember your name."
+    },
+    {
+        "user": "My name is Abhi",
+        "bot": "Nice to meet you, Abhi! I'll remember your name."
+    },
+    {
+        "user": "python tests/test_memory.py",
+        "bot": "Okay, Abhi! It looks like you're running `python tests/test_memory.py`.\n\nAre you diving into some specific memory-related testing for your Smart Office System, or just checking the overall health of your Python components? How are those tests going?"
+    },
+    {
+        "user": "I like Pizza",
+        "bot": "I'll remember that you like Pizza."
+    },
+    {
+        "user": "My favorite color is Blue",
+        "bot": "Thanks for sharing, Abhi! I'll make a note that your favorite color is Blue."
+    },
+    {
+        "user": "My hobby is Coding",
+        "bot": "That's great, Abhi! I'll remember that your hobby is Coding. It definitely aligns with your work on Project F and your goals as an AI Architect!"
+    },
+    {
+        "user": "My favorite color is Blue",
+        "bot": "I'll remember your favorite color is Blue."
+    },
+    {
+        "user": "My hobby is Coding",
+        "bot": "I'll remember your hobby is Coding."
+    },
+    {
+        "user": "What is my name",
+        "bot": "Your name is Abhi."
+    },
+    {
+        "user": "i like?",
+        "bot": "I'll remember that you like ?."
+    },
+    {
+        "user": "What do I like",
+        "bot": "It looks like the last time you mentioned something you like, you left it open with a question mark! If you tell me what it is, I'd be happy to remember it for you."
+    },
+    {
+        "user": "What are my goals",
+        "bot": "Your goals are:\n\n\u2022 Become an ai architect\n"
+    },
+    {
+        "user": "i like coding",
+        "bot": "I'll remember that you like coding."
+    },
+    {
+        "user": "What are my projects",
+        "bot": "Your projects are:\n\n\u2022 Smart Office System\n\u2022 Project F\n"
+    },
+    {
+        "user": "What are my skills",
+        "bot": "Your skills are:\n\n\u2022 Python\n\u2022 React\n\u2022 Flask\n\u2022 Docker\n"
+    },
+    {
+        "user": "python tests/test_ai_memory.py",
+        "bot": "Okay, it looks like you're running `tests/test_ai_memory.py` with Python!"
+    },
+    {
+        "user": "I'm building an AI resume builder using React, Flask and PostgreSQL",
+        "bot": "I'll remember your goal: an AI resume builder using React, Flask and PostgreSQL."
+    },
+    {
+        "user": "Who is Sundar Pichai and latest news about him?",
+        "bot": "Sundar Pichai, whose full name is Pichai Sundararajan, is an Indian-American business executive. He has been the CEO of Google since 2015 and the CEO of its parent company, Alphabet Inc., since 2019.\n\nRecently, he has been in the news for:\n*   **Giving Advice to Students:** During a speech to Stanford students, Pichai encouraged them to relax and not let external pressures overwhelm them, suggesting that \"the world won't end if you relax a little.\" He also shared three guiding principles for life and emphasized focusing on the few moments that truly matter.\n*   **Major AI Investment:** Google plans to invest $190 billion in AI infrastructure. Pichai stated this significant investment is necessary because the demand for AI technology currently outpaces the available supply.\n*   **High Compensation:** He is considered one of the world's highest-paid CEOs, with reports mentioning a substantial pay package that could be worth up to USD 692 million."
+    },
+    {
+        "user": "Who is Elon Musk?",
+        "bot": "Elon Musk is a businessman who is the CEO and largest shareholder of Tesla and SpaceX. He has been the wealthiest person in the world since 2025 and became the only trillionaire in US dollars in June 2026. As of July 10, 2026, Forbes estimates his net worth to be US$917 billion."
     }
 ]

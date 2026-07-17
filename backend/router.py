@@ -22,7 +22,15 @@ def route(message):
 
     # ---------------- Profile ----------------
 
-    if text.startswith("my name is") or text.startswith("call me"):
+    if (
+        text.startswith("my name is")
+        or text.startswith("call me")
+        or text.startswith("my age is")
+        or text.startswith("i live in")
+        or text.startswith("my college is")
+        or text.startswith("i study at")
+        or text.startswith("my department is")
+    ):
         return profile_handle(message)
 
     # ---------------- Preferences ----------------
@@ -32,6 +40,8 @@ def route(message):
         or text.startswith("i love")
         or text.startswith("i enjoy")
         or text.startswith("i prefer")
+        or text.startswith("my favorite color is")
+        or text.startswith("my hobby is")
     ):
         return preference_handle(message)
 
@@ -43,6 +53,7 @@ def route(message):
         or text.startswith("i'm building")
         or text.startswith("i am building")
         or text.startswith("my goal is")
+        or text.startswith("i want to")
     ):
         return goal_handle(message)
 
@@ -50,8 +61,11 @@ def route(message):
 
     if (
         "what is my name" in text
+        or "who am i" in text
         or "my preferences" in text
         or "my goals" in text
+        or "my projects" in text
+        or "my skills" in text
     ):
         return recall_handle(message)
 

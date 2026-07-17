@@ -1,6 +1,6 @@
-from backend.memory_manager import (
-    remember_preference,
-    get_preferences
+from backend.memory_service import (
+    save_preference,
+    get_preference
 )
 
 from backend.semantic import PREFERENCE_PATTERNS
@@ -32,7 +32,7 @@ def handle(message):
 
             value = message[len(phrase):].strip()
 
-            remember_preference("likes", value)
+            save_preference("likes", value)
 
             return f"I'll remember that you like {value}."
 
@@ -44,7 +44,7 @@ def handle(message):
 
             value = message[len(phrase):].strip()
 
-            remember_preference("favorite_color", value)
+            save_preference("favorite_color", value)
 
             return f"I'll remember your favorite color is {value}."
 
@@ -56,7 +56,7 @@ def handle(message):
 
             value = message[len(phrase):].strip()
 
-            remember_preference("hobby", value)
+            save_preference("hobby", value)
 
             return f"I'll remember your hobby is {value}."
 

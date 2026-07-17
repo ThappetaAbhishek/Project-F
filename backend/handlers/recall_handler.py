@@ -1,7 +1,9 @@
-from memory.memory import recall_fact
-from backend.memory_manager import (
-    get_preferences,
-    get_goals
+from backend.memory_service import (
+    get_profile,
+    get_preference,
+    get_goals,
+    get_projects,
+    get_skills
 )
 
 
@@ -19,9 +21,17 @@ RECALL_QUESTIONS = {
 
     "what is my department": "department",
 
-    "what do i like": "preferences",
+    "what do i like": "likes",
 
-    "what are my goals": "goals"
+    "what is my favorite color": "favorite_color",
+
+    "what is my hobby": "hobby",
+
+    "what are my goals": "goals",
+
+    "what are my projects": "projects",
+
+    "what are my skills": "skills"
 }
 
 
@@ -48,7 +58,7 @@ def handle(message):
         "department"
     ]:
 
-        value = recall_fact(question)
+        value = get_profile(question)
 
         if value:
 
@@ -66,19 +76,25 @@ def handle(message):
 
     # ---------------- Preferences ----------------
 
-    if question == "preferences":
+    if question in [
+        "likes",
+        "favorite_color",
+        "hobby"
+    ]:
 
-        prefs = get_preferences()
+        value = get_preference(question)
 
-        if not prefs:
-            return "I don't know your preferences yet."
+        if value:
 
-        lines = []
+            labels = {
+                "likes": "You like",
+                "favorite_color": "Your favorite color is",
+                "hobby": "Your hobby is"
+            }
 
-        for key, value in prefs.items():
-            lines.append(f"{key}: {value}")
+            return f"{labels[question]} {value}."
 
-        return "\n".join(lines)
+        return "I don't know that yet."
 
     # ---------------- Goals ----------------
 
@@ -95,3 +111,37 @@ def handle(message):
             result += f"• {goal}\n"
 
         return result
+
+    # ---------------- Projects ----------------
+
+    if question == "projects":
+
+        projects = get_projects()
+
+        if not projects:
+            return "I don't know your projects yet."
+
+        result = "Your projects are:\n\n"
+
+        for project in projects:
+            result += f"• {project}\n"
+
+        return result
+
+    # ---------------- Skills ----------------
+
+    if question == "skills":
+
+        skills = get_skills()
+
+        if not skills:
+            return "I don't know your skills yet."
+
+        result = "Your skills are:\n\n"
+
+        for skill in skills:
+            result += f"• {skill}\n"
+
+        return result
+
+    return "I don't know that yet."
